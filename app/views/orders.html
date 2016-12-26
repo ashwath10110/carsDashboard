@@ -1,6 +1,16 @@
 MY ORDERS
 
-<a ui-sref=".lastMonthOrders" class="btn btn-primary">Show Last Month Orders</a>
-<a ui-sref=".customRangeOrders" class="btn btn-danger">Show Custom Range Orders</a>
-
-<div ui-view></div>
+<div class="row">
+	<div class="col-md-3">
+		<table class="table table-bordered">
+			<tbody>
+				<tr ng-repeat="option in sideoptions">
+					<td><a ui-sref="orders.{{option.sref}}">{{option.name}}</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-9">
+		<ui-view></ui-view>
+	</div>
+</div>

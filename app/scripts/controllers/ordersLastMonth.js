@@ -8,28 +8,17 @@
  * Controller of the myAppApp
  */
 angular.module('myAppApp')
-	.controller('OrdersLastMonthCtrl', function($scope) {
+    .controller('OrdersLastMonthCtrl', function($scope, myService, OldOrderService) {
 
-		$scope.message = 'test';
+        $scope.options = ['price', 'model','manufacturer'];
 
-		// order by options
-		$scope.options = ['country', 'address'];
+        $scope.selectedOrder = $scope.options[0];
 
-		$scope.selectedOrder = $scope.options[0];
+        $scope.orders = [];
 
-		// all countries
-		$scope.details = [{
-			id: 1,
-			country: 'Finland',
-			address: 'Mainstreet 2'
-		}, {
-			id: 2,
-			country: 'Mexico',
-			address: 'Some address'
-		}, {
-			id: 3,
-			country: 'Canada',
-			address: 'Snowroad 45'
-		}];
+        OldOrderService.getData(function(result) {
+            $scope.orders = result.data;
+            myService.orders = $scope.orders;
+        });
 
-	});
+    });

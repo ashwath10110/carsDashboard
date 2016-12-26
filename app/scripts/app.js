@@ -16,7 +16,8 @@ var myApp = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'highcharts-ng'
   ])
 
 myApp.config(function($stateProvider, $urlRouterProvider) {
@@ -32,7 +33,8 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'views/navbar.html'
       },
       content: {
-        templateUrl: 'views/main.html'
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
       },
       footer: {
         templateUrl: 'views/footer.html'
@@ -60,36 +62,79 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/ordersLastMonth.html',
       controller: 'OrdersLastMonthCtrl'
     })
-    .state('orders.customRangeOrders', {
-      url: '/customRangeOrders',
-      templateUrl: 'views/ordersCustom.html',
-      controller: 'OrdersCustomCtrl'
+    .state('orders.lastMonthOrders.order', {
+      url: "/order/:id",
+      templateUrl: 'views/orderDetail.html',
+      controller: 'OrderDetailCtrl'
     })
-    .state('login', {
-      url: '/login',
-      views: {
-        content: {
-          templateUrl: 'views/login.html',
-          controller: 'LoginCtrl'
-        }
+
+  .state('orders.neworder', {
+    url: '/neworder',
+    templateUrl: 'views/neworder.html',
+    controller: 'NewOrderCtrl'
+  })
+
+  .state('orders.neworder.checkout', {
+    url: '/checkout',
+    params: {
+      obj: null
+    },
+    templateUrl: 'views/checkout.html',
+    controller: 'CheckoutCtrl'
+  })
+
+
+  .state('login', {
+    url: '/login',
+    views: {
+      content: {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
       }
-    })
-    .state('sales', {
-      url: '/sales',
+    }
+  })
+
+
+  .state('showcase', {
+      url: '/showcase',
       views: {
         nav: {
           templateUrl: 'views/navbar.html'
         },
         content: {
-          templateUrl: 'views/sales.html',
-          controller: 'SalesCtrl'
+          templateUrl: 'views/showcase.html',
+          controller: 'ShowcaseCtrl'
         },
         footer: {
           templateUrl: 'views/footer.html'
         }
       }
     })
-    .state('analysis', {
+    .state('showcase.model', {
+      url: "/model/:id",
+      templateUrl: 'views/showcaseDetail.html',
+      controller: 'ShowcaseModelCtrl'
+    })
+
+
+  .state('sales', {
+    url: '/sales',
+    views: {
+      nav: {
+        templateUrl: 'views/navbar.html'
+      },
+      content: {
+        templateUrl: 'views/sales.html',
+        controller: 'SalesCtrl'
+      },
+      footer: {
+        templateUrl: 'views/footer.html'
+      }
+    }
+  })
+
+
+  .state('analysis', {
       url: '/analysis',
       controller: 'AnalysisCtrl',
       views: {

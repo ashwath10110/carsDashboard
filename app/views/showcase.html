@@ -7,14 +7,11 @@
 
         <table class="table table-bordered">
             <tbody>
-                <tr ng-repeat="order in orders | orderBy:selectedOrder"">
+                <tr ng-repeat="model in models | orderBy:selectedOrder"">
                     <td>
-                    <a ui-sref="orders.lastMonthOrders.order({id: order.id})">
+                    <a ui-sref="showcase.model({id: model.id})">
                         <div>
-                           Name: Manufacturer: {{order.manufacturer}} {{order.model}}
-                        </div>
-                        <div>
-                            price: {{order.price}}
+                           {{model.id}}
                         </div>
                     </a>
                     </td>

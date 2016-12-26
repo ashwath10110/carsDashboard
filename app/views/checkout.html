@@ -1,0 +1,28 @@
+<form name="checkoutForm" ng-submit="onSubmit()" data-abide>
+
+	<fieldset>
+		<legend>Shipping Information</legend>
+
+		<div class="row">
+
+			<label class="large-12 columns">Name
+				<input ng-model="name" type="text" placeholder="Name">
+			</label>
+
+			<br>
+
+			<label class="large-12 columns">Phone
+				<input ng-model="phone" type="tel" placeholder="Phone">
+			</label>
+
+		</div>
+	</fieldset>
+
+	<div class="clearfix">
+		<div class="right">
+			<button class="cancel" ng-click="cancel();">Cancel</button>
+			<button type="submit" ng-click="placeOrder();">Place Order</button>
+		</div>
+	</div>
+
+</form>

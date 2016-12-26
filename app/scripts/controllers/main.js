@@ -8,10 +8,23 @@
  * Controller of the myAppApp
  */
 angular.module('myAppApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+	.controller('MainCtrl', function($scope) {
+
+		$scope.chartConfig = {
+			options: {
+				chart: {
+					type: 'bar'
+				}
+			},
+			series: [{
+				data: [10, 15, 12, 8, 7]
+			}],
+			title: {
+				text: 'Hello'
+			},
+
+			loading: false
+		}
+
+
+	});
