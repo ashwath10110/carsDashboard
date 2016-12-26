@@ -1,24 +1,21 @@
 <div class="row">
 	<div class="col-md-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<!-- {{channel.id}} -->
-			</div>
-			<div class="panel-body">
-				<div>
-					Name: Manufacturer: {{order.manufacturer}} {{order.model}}
-				</div>
-				<div>
-					Price: {{order.price}}
-				</div>
-				<div>
-					<img ng-src="scripts/JSONDataSource/images/{{order.img}}"/>
-				</div>
-			</div>
+		<div class="container">
+		    <div class="row">
+		        <!-- Card Projects -->
+		        <div class="col-md-6 col-md-offset-3">
+		            <div class="card">
+		                <div class="card-image">
+			                <img class="img-responsive" ng-src="scripts/JSONDataSource/images/{{order.img}}"/>
+		                </div>
+		                
+		                <div class="card-content">
+		                    <p>{{order.manufacturer}} {{order.model}}</p>
+		                </div>
+		                
+		            </div>
+		        </div>
+		    </div>
 		</div>
 	</div>
-	<div class="col-md-12">
-		<ui-view></ui-view>
-	</div>
 </div>
-
