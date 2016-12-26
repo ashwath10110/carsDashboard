@@ -164,7 +164,8 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
           templateUrl: 'views/navbar.html'
         },
         content: {
-          templateUrl: 'views/about.html'
+          templateUrl: 'views/about.html',
+          controller: 'AboutCtrl'
         },
         footer: {
           templateUrl: 'views/footer.html'

@@ -11,10 +11,10 @@ angular.module('myAppApp')
 	.controller('OrdersCtrl', function($scope) {
 
 		$scope.sideoptions = [{
-			"name": "lastMonthOrders",
+			"name": "Last Month Orders",
 			"sref": "lastMonthOrders",
 		}, {
-			"name": "neworder",
+			"name": "New Order",
 			"sref": "neworder",
 		}];
 
