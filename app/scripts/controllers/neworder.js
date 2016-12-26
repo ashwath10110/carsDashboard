@@ -8,7 +8,7 @@
  * Controller of the myAppApp
  */
 angular.module('myAppApp')
-	.controller('NewOrderCtrl', function($scope, $http, OrderService, $state) {
+	.controller('NewOrderCtrl', function($scope, $http, OrderService, $state, toastr) {
 
 		$scope.cart = [];
 
@@ -19,7 +19,9 @@ angular.module('myAppApp')
 		});
 
 		$scope.addToCart = function(product) {
+			
 			var found = false;
+			
 			$scope.cart.forEach(function(item) {
 				if (item.id === product.id) {
 					item.quantity++;
@@ -31,6 +33,10 @@ angular.module('myAppApp')
 					quantity: 1
 				}, product));
 			}
+
+			var carName = product.manufacturer + ' ' + product.model;
+
+			toastr.info('Added the car ' + carName + ' to cart');
 		};
 
 		$scope.getCartPrice = function() {

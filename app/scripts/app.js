@@ -17,7 +17,8 @@ var myApp = angular
     'ngSanitize',
     'ngTouch',
     'ui.router',
-    'highcharts-ng'
+    'highcharts-ng',
+    'toastr'
   ])
 
 myApp.config(function($stateProvider, $urlRouterProvider) {
@@ -30,7 +31,8 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     url: '/home',
     views: {
       nav: {
-        templateUrl: 'views/navbar.html'
+        templateUrl: 'views/navbar.html',
+        controller: 'NavCtrl'
       },
       content: {
         templateUrl: 'views/main.html',
@@ -41,6 +43,22 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
       }
     }
   })
+
+  .state('home.lastweek', {
+      url: '/lastweek',
+      templateUrl: 'views/graphs.html',
+      controller: 'LastWeekCtrl'
+    })
+    .state('home.lastmonth', {
+      url: '/lastmonth',
+      templateUrl: 'views/graphs.html',
+      controller: 'LastWeekCtrl'
+    })
+    .state('home.lastquarter', {
+      url: '/lastquarter',
+      templateUrl: 'views/graphs.html',
+      controller: 'LastQuarterCtrl'
+    })
 
   .state('orders', {
       url: '/orders',
@@ -116,62 +134,22 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
       controller: 'ShowcaseModelCtrl'
     })
 
-
-  .state('sales', {
-    url: '/sales',
+  .state('about', {
+    url: '/about',
+    controller: 'AboutCtrl',
     views: {
       nav: {
         templateUrl: 'views/navbar.html'
       },
       content: {
-        templateUrl: 'views/sales.html',
-        controller: 'SalesCtrl'
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl'
       },
       footer: {
         templateUrl: 'views/footer.html'
       }
     }
-  })
-
-
-  .state('analysis', {
-      url: '/analysis',
-      controller: 'AnalysisCtrl',
-      views: {
-        nav: {
-          templateUrl: 'views/navbar.html'
-        },
-        content: {
-          templateUrl: 'views/analysis.html'
-        },
-        'columnOne@analysis': {
-          template: 'Look I am a column!'
-        },
-        'columnTwo@analysis': {
-          templateUrl: 'views/table-data.html',
-          controller: 'scotchController'
-        },
-        footer: {
-          templateUrl: 'views/footer.html'
-        }
-      }
-    })
-    .state('about', {
-      url: '/about',
-      controller: 'AboutCtrl',
-      views: {
-        nav: {
-          templateUrl: 'views/navbar.html'
-        },
-        content: {
-          templateUrl: 'views/about.html',
-          controller: 'AboutCtrl'
-        },
-        footer: {
-          templateUrl: 'views/footer.html'
-        }
-      }
-    });
+  });
 
 });
 

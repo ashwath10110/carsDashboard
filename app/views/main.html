@@ -1,5 +1,9 @@
-<div>Hello Dashboard</div>
-
-<highchart id="chart1" config="chartConfig"></highchart>
+<div class="container-fluid">
+  <ul class="nav nav-tabs nav-justified">
+    <li ui-sref-active="active"><a ui-sref="home.lastweek">Last Week Analysis</a></li>
+    <li ui-sref-active="active"><a ui-sref="home.lastmonth">Last Month Analysis</a></li>
+    <li ui-sref-active="active"><a ui-sref="home.lastquarter">Last Quarter Analysis</a></li>
+  </ul>
+</div>
 
 <div ui-view></div>

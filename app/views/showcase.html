@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
         
         <input type="text" ng-model="carFilter" />
 
@@ -11,7 +11,7 @@
                     <td>
                     <a ui-sref="showcase.model({id: model.id})">
                         <div>
-                           {{model.id}}
+                           {{model.manufacturer}} {{model.model}}
                         </div>
                     </a>
                     </td>
@@ -19,7 +19,7 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-9">
         <ui-view></ui-view>
     </div>
 </div>
