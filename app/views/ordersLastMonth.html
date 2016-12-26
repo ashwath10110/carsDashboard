@@ -1,0 +1,22 @@
+<input type="text" ng-model="countryFilter" />
+
+<select ng-model="selectedOrder" ng-options="option for option in options"></select>
+
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Country</td>
+            <td>Address</td>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr ng-repeat="detail in details | filter:{country: countryFilter} | orderBy:selectedOrder"">
+            <td>{{ detail.id }}</td>
+            <td>{{ detail.country }}</td>
+            <td>{{ detail.address }}</td>
+        </tr>
+        
+    </tbody>
+</table>
