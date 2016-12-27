@@ -1,21 +1,36 @@
-<div class="row">
-	<div class="col-md-12">
+<div class="panel panel-default col-md-12 card">
+	<div class="panel-body">
 		<div class="container">
-		    <div class="row">
-		        <!-- Card Projects -->
-		        <div class="col-md-6 col-md-offset-3">
-		            <div class="card">
-		                <div class="card-image">
-			                <img class="img-responsive" ng-src="scripts/JSONDataSource/images/{{order.img}}"/>
-		                </div>
-		                
-		                <div class="card-content">
-		                    <p>{{order.manufacturer}} {{order.model}}</p>
-		                </div>
-		                
-		            </div>
-		        </div>
-		    </div>
+					<br>
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel" data-slide-to="1"></li>
+							<li data-target="#myCarousel" data-slide-to="2"></li>
+							<li data-target="#myCarousel" data-slide-to="3"></li>
+						</ol>
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<img class="img-responsive" ng-src="scripts/JSONDataSource/images/{{order.img}}" alt="Chania" width="460" height="345">
+							</div>
+							<div class="item">
+								<img class="img-responsive" ng-src="scripts/JSONDataSource/images/{{order.img}}" alt="Chania" width="460" height="345">
+							</div>
+							
+							<div class="item">
+								<img class="img-responsive" ng-src="scripts/JSONDataSource/images/{{order.img}}" alt="Flower" width="460" height="345">
+							</div>
+							<div class="item">
+								<img class="img-responsive" ng-src="scripts/JSONDataSource/images/{{order.img}}" alt="Flower" width="460" height="345">
+							</div>
+						</div>
+					</div>
+				</div>	
+		<div class="card-content">
+			<p><b>Name : </b>{{order.manufacturer}} {{order.model}}</p>
+			<p><b>Orders :</b> {{order.noOfOrders}}</p>
 		</div>
 	</div>
 </div>

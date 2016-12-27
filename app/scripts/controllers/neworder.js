@@ -14,6 +14,8 @@ angular.module('myAppApp')
 
 		$scope.products = [];
 
+		$scope.space = ' .';
+
 		OrderService.getData(function(result) {
 			$scope.products = result.data;
 		});
@@ -64,6 +66,8 @@ angular.module('myAppApp')
 		$scope.emptyCart = function(){
 
 			$scope.cart = [];
+
+			$state.go('orders.neworder');
 
 		};
 

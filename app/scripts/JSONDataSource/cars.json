@@ -2,7 +2,7 @@
     "data": [{
         "id": 1,
         "img": "2004_Porsche_911_Carrera_type_997.jpg",
-        "manufacturer": "Porsche",
+        "manufacturer": "Audi",
         "model": "911",
         "price": 135000,
         "quality": [{
@@ -28,7 +28,7 @@
     }, {
         "id": 2,
         "img": "250px-Nissan_GT-R.jpg",
-        "manufacturer": "Nissan",
+        "manufacturer": "Audi",
         "model": "GT-R",
         "price": 80000,
         "quality": [{
@@ -54,7 +54,7 @@
     }, {
         "id": 3,
         "img": "250px-BMW_M3_E92.jpg",
-        "manufacturer": "BMW",
+        "manufacturer": "Audi",
         "model": "M3",
         "price": 60500,
         "quality": [{

@@ -34,7 +34,6 @@ myApp.service('ShowcaseService', function($resource, $filter) {
 	});
 });
 
-
 myApp.service('OldOrderService', function($resource, $filter) {
 
 	return $resource('scripts/JSONDataSource/orders.json', {}, {
@@ -47,7 +46,7 @@ myApp.service('OldOrderService', function($resource, $filter) {
 
 myApp.service('OrderService', function($resource, $filter) {
 
-	return $resource('scripts/JSONDataSource/items.json', {}, {
+	return $resource('scripts/JSONDataSource/orders.json', {}, {
 		getData: {
 			method: 'GET',
 			isArray: false

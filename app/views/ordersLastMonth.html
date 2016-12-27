@@ -1,32 +1,19 @@
 <div class="row">
     <div class="col-md-4">
-        <div class="form-group">
-            <label for="inputdefault">Search</label>
-            <input class="form-control" ng-model="carFilter" id="inputdefault" type="text">
-        </div>
-        <div class="form-group">
-            <label for="sel1">Sort By:</label>
-        <select class="form-control" id="sel1" ng-model="selectedOrder" ng-options="option for option in options"></select>
-        <br>
+        <ul class="nav nav-pills nav-stacked">
+            <li ui-sref-active="active" ng-repeat="order in orders | orderBy:selectedOrder | filter:carFilter">
+                <a ui-sref="orders.lastMonthOrders.order({id: order.id})">
+                    <div class="">
+                        <b>Name : </b>{{order.manufacturer}} {{order.model}}
+                    </div>
+                    <div class="">
+                        <b>Price : </b>{{order.price}}
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
-    <table class="table table-bordered">
-        <tbody>
-            <tr ng-repeat="order in orders | orderBy:selectedOrder"">
-                <td>
-                    <a ui-sref="orders.lastMonthOrders.order({id: order.id})">
-                        <div>
-                            Name: Manufacturer: {{order.manufacturer}} {{order.model}}
-                        </div>
-                        <div>
-                            price: {{order.price}}
-                        </div>
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<div class="col-md-8">
-    <ui-view></ui-view>
-</div>
+    <div class="col-md-8">
+        <ui-view></ui-view>
+    </div>
 </div>
