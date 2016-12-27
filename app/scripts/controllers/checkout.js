@@ -9,8 +9,8 @@
  */
 angular.module('myAppApp')
 
-.controller('CheckoutCtrl', function($scope, $state) {
-	
+.controller('CheckoutCtrl', function($scope, $state, toastr) {
+
 	$scope.totalAmount = 0;
 
 	$scope.onSubmit = function() {
@@ -18,10 +18,12 @@ angular.module('myAppApp')
 	};
 
 	$scope.cancel = function() {
+		toastr.info('Cancelled your saved order');
 		$state.go('orders');
 	};
 
 	$scope.placeOrder = function() {
+		toastr.success('Congratulations!!! Your order has been placed.');
 		$state.go('home');
 	};
 

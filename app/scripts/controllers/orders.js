@@ -8,7 +8,7 @@
  * Controller of the myAppApp
  */
 angular.module('myAppApp')
-	.controller('OrdersCtrl', function($scope) {
+	.controller('OrdersCtrl', function($scope, $state) {
 
 		$scope.sideoptions = [{
 			"name": "Last Month Orders",
@@ -17,5 +17,7 @@ angular.module('myAppApp')
 			"name": "New Order",
 			"sref": "neworder",
 		}];
+
+		$state.go('orders.lastMonthOrders');
 
 	});

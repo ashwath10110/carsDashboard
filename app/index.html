@@ -26,8 +26,8 @@
 
       <div ui-view name="nav"></div>
 
-      <div class="container-fluid">
-         <div ui-view name="content"></div>
+      <div class="container-fluid" ui-view name="content">
+         <!-- <div ui-view name="content"></div> -->
       </div>
       
       <div ui-view name="footer"></div>
@@ -56,10 +56,12 @@
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
       <script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
       <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+      <script src="bower_components/highcharts/highcharts.js"></script>
       <!-- endbower -->
       <!-- endbuild -->
       <!-- build:js({.tmp,app}) scripts/scripts.js -->
       <script src="scripts/app.js"></script>
+      <script src="scripts/app.routes.js"></script>
       <script src="scripts/controllers/main.js"></script>
       <script src="scripts/controllers/about.js"></script>
       <script src="scripts/controllers/orders.js"></script>
@@ -71,9 +73,9 @@
       <script src="scripts/controllers/showcase.js"></script>
       <script src="scripts/controllers/showcasemodel.js"></script>
       <script src="scripts/controllers/checkout.js"></script>
+      <script src="scripts/controllers/customers.js"></script>
       <script src="scripts/services/orders.service.js"></script>
-      <script src="http://code.highcharts.com/highcharts.js"></script>
-
+      <script src="scripts/services/analysis.service.js"></script>
       <!-- endbuild -->
    </body>
 </html>

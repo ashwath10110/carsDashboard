@@ -10,233 +10,51 @@
 angular.module('myAppApp')
 	.controller('MainCtrl', function($scope, toastr, $state) {
 
-		toastr.success('Welcome Sudarshan!!!');
-
 		$state.go('home.lastweek');
-
-		$scope.chartConfig1 = {
-			options: {
-				chart: {
-					type: 'bar'
-				}
-			},
-			series: [{
-				data: [10, 15, 12, 8, 7]
-			}],
-			title: {
-				text: 'Hello'
-			},
-
-			loading: false
-		}
-
-		$scope.chartConfig2 = {
-			options: {
-				chart: {
-					type: 'bar'
-				}
-			},
-			series: [{
-				data: [10, 15, 12, 8, 7]
-			}],
-			title: {
-				text: 'World'
-			},
-
-			loading: false
-		}
-
-		$scope.chartConfig3 = {
-			options: {
-				chart: {
-					type: 'bar'
-				}
-			},
-			series: [{
-				data: [10, 15, 12, 8, 7]
-			}],
-			title: {
-				text: 'Universe'
-			},
-
-			loading: false
-		}
-
 
 	});
 
 angular.module('myAppApp')
-	.controller('LastWeekCtrl', function($scope, toastr) {
+	.controller('LastWeekCtrl', function($scope, AnalysisService, toastr) {
 
 		toastr.success('Last week analysis!!!');
 
-		$scope.chartConfig1 = {
-			options: {
-				chart: {
-					type: 'bar'
-				}
-			},
-			series: [{
-				data: [10, 15, 12, 8, 7]
-			}],
-			title: {
-				text: 'Hello'
-			},
+		$scope.salesByModelBar = AnalysisService.salesByModelBar;
 
-			loading: false
-		}
+		$scope.salesByModelPie = AnalysisService.salesByModelPie;
 
-		$scope.chartConfig2 = {
-			options: {
-				chart: {
-					type: 'bar'
-				}
-			},
-			series: [{
-				data: [10, 15, 12, 8, 7]
-			}],
-			title: {
-				text: 'World'
-			},
-
-			loading: false
-		}
-
-		$scope.chartConfig3 = {
-			options: {
-				chart: {
-					type: 'bar'
-				}
-			},
-			series: [{
-				data: [10, 15, 12, 8, 7]
-			}],
-			title: {
-				text: 'Universe'
-			},
-
-			loading: false
-		}
-
+		$scope.profitsByModelBar = AnalysisService.profitsByModelBar;
 
 	});
 
 angular.module('myAppApp')
-	.controller('LastMonthCtrl', function($scope, toastr) {
+	.controller('LastMonthCtrl', function($scope, AnalysisService, toastr) {
 
 		toastr.success('Last Month analysis!!!');
 
-		$scope.chartConfig1 = {
-			options: {
-				chart: {
-					type: 'bar'
-				}
-			},
-			series: [{
-				data: [10, 15, 12, 8, 7]
-			}],
-			title: {
-				text: 'Hello'
-			},
+		$scope.salesByModelBar = AnalysisService.salesByModelBar;
 
-			loading: false
-		}
+		$scope.salesByModelPie = AnalysisService.salesByModelPie;
 
-		$scope.chartConfig2 = {
-			options: {
-				chart: {
-					type: 'bar'
-				}
-			},
-			series: [{
-				data: [10, 15, 12, 8, 7]
-			}],
-			title: {
-				text: 'World'
-			},
-
-			loading: false
-		}
-
-		$scope.chartConfig3 = {
-			options: {
-				chart: {
-					type: 'bar'
-				}
-			},
-			series: [{
-				data: [10, 15, 12, 8, 7]
-			}],
-			title: {
-				text: 'Universe'
-			},
-
-			loading: false
-		}
-
+		$scope.profitsByModelBar = AnalysisService.profitsByModelBar;
 
 	});
 
 angular.module('myAppApp')
-	.controller('LastQuarterCtrl', function($scope, toastr) {
+	.controller('LastQuarterCtrl', function($scope, AnalysisService, toastr) {
 
 		toastr.success('Last Quarter Analysis!!!');
 
-		$scope.chartConfig1 = {
-			options: {
-				chart: {
-					type: 'bar'
-				}
-			},
-			series: [{
-				data: [10, 15, 12, 8, 7]
-			}],
-			title: {
-				text: 'Hello'
-			},
+		$scope.salesByModelBar = AnalysisService.salesByModelBar;
 
-			loading: false
-		}
+		$scope.salesByModelPie = AnalysisService.salesByModelPie;
 
-		$scope.chartConfig2 = {
-			options: {
-				chart: {
-					type: 'bar'
-				}
-			},
-			series: [{
-				data: [10, 15, 12, 8, 7]
-			}],
-			title: {
-				text: 'World'
-			},
-
-			loading: false
-		}
-
-		$scope.chartConfig3 = {
-			options: {
-				chart: {
-					type: 'bar'
-				}
-			},
-			series: [{
-				data: [10, 15, 12, 8, 7]
-			}],
-			title: {
-				text: 'Universe'
-			},
-
-			loading: false
-		}
-
+		$scope.profitsByModelBar = AnalysisService.profitsByModelBar;
 
 	});
 
 
 angular.module('myAppApp')
 	.controller('NavCtrl', function($scope, toastr, $state) {
-
-		
 
 	});

@@ -1,9 +1,3 @@
-myApp.service('hexafy', function() {
-	this.myFunc = function(x) {
-		return x.toString(16);
-	}
-});
-
 myApp.service('myService', function($resource) {
 	this.result = {};
 
@@ -57,6 +51,16 @@ myApp.service('OrderService', function($resource, $filter) {
 		getData: {
 			method: 'GET',
 			isArray: false
+		}
+	});
+});
+
+myApp.service('CustomersService', function($resource, $filter) {
+
+	return $resource('scripts/JSONDataSource/customers.json', {}, {
+		getData: {
+			method: 'GET',
+			isArray: true
 		}
 	});
 });

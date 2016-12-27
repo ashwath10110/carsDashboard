@@ -60,4 +60,11 @@ angular.module('myAppApp')
 			});
 
 		};
+
+		$scope.emptyCart = function(){
+
+			$scope.cart = [];
+
+		};
+
 	});

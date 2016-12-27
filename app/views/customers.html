@@ -1,0 +1,43 @@
+<div class="container-fluid">
+   <h2>Customer Details</h2>
+   <div class="row">   
+      <div class="col-md-3">
+         <div class="form-group">
+            <label for="inputdefault">Search</label>
+            <input class="form-control" ng-model="customerFilter" id="inputdefault" type="text">
+         </div>
+         <div class="form-group">
+            <label for="sel1">Sort By:</label>
+         <select class="form-control" id="sel1" ng-model="selectedOrder" ng-options="option for option in options"></select>
+         <br>
+      </div>
+   </div>
+   
+   <div class="panel-group">
+      <div ng-repeat="customer in customers | orderBy:selectedOrder | filter:customerFilter" class="panel panel-default col-md-3">
+         <div class="panel-body">
+            <div class="row">
+               <img class="img-responsive" ng-src="{{customer.picture}}"/>
+            </div>
+            <div class="row">
+               <b>Name:</b> {{customer.first_name + ' ' +customer.last_name}}
+            </div>
+            <div class="row">
+               <b>Gender: </b>{{customer.gender}}
+            </div>
+            <div class="row">
+               <b>Mobile: </b>{{customer.phone}}
+            </div>
+            <div class="row">
+               <b>Email: </b>{{customer.email}}
+            </div>
+            <div class="row">
+               <b>Credit Card: </b>{{customer.card}}
+            </div>
+            <div class="row">
+               <b>City: </b>{{customer.address}}
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
